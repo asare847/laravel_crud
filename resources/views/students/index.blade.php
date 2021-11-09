@@ -1,4 +1,8 @@
 @extends('layouts.app')
+    <link rel="" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+@section('css')
+    
+@endsection
 @section('content')
  
 <div class="container">
@@ -6,12 +10,12 @@
         </div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h2> Laravel Image Crud
-                        <a href="{{ url('/students/create') }}" class="btn btn-primary btn-sm float-right">Add Student</a>
+                    <h2> Students  CRUD
+                        <a href="{{ url('/students/create') }}" class="btn btn-primary btn-sm float-end">Add Student</a>
                     </h2>
                 </div>
                 <div class="card-body">
-                    <table class="table">
+                    <table class="table" id="studentsTable">
                         <thead class="thead-dark">
                             <tr>
                                 <th>ID</th>
@@ -39,10 +43,22 @@
                             @endforeach
                         </tbody>
                     </table>
+                    
                 </div>
+                {{$students->links('pagination::bootstrap-4')}}
             </div>
+            
         </div>
     </div>
 </div>
 
 @endsection
+<!--JQuery Databale for search-->
+@push('scripts')
+    <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script>
+          $(document).ready( function () {
+             $('#studentsTable').DataTable();
+        });
+    </script>
+    @endpush

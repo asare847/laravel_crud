@@ -7,9 +7,9 @@
             <div class="card">
                 <div class="card-header">
                     <h2> Student Details
-                        <a href="{{ url('/students') }}" class="btn btn-success btn-sm float-right" style="margin-left:5px;">View Student</a>
-                        <a href="{{ url('/students/create') }}" class="btn btn-primary btn-sm float-right"style="margin-left:5px;">Add Student</a>
-                        <a href="{{ url('/students/edit/'.$student->id) }}" class="btn btn-warning btn-sm float-right">Edit Details</a>
+                        <a href="{{ url('/students') }}" class="btn btn-success btn-sm float-end" style="margin-left:5px;">View Student</a>
+                        <a href="{{ url('/students/create') }}" class="btn btn-primary btn-sm float-end"style="margin-left:5px;">Add Student</a>
+                        <a href="{{ url('/students/edit/'.$student->id) }}" class="btn btn-warning btn-sm float-end">Edit Details</a>
                     </h2>
                 </div>
                 <div class="card-body">

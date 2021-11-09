@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="card-header">
                     <h2> Add Student with Image
-                        <a href="{{ url('/students') }}" class="btn btn-success btn-sm float-right"> View Students</a>
+                        <a href="{{ url('/students') }}" class="btn btn-success btn-sm float-end"> View Students</a>
                     </h2>
                 </div>
                 <div class="card-body">
@@ -36,7 +36,11 @@
                         <div class="form-group">
                         <img src="{{ asset('uploads/students/'.$student->profile_image) }}" width="300px">
                         </div>
-                            <button type="submit" class="btn btn-primary btn-md" >Update Details</button>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-md"  style="margin-top: 5px">Update Details</button>
+                        </div>
+
                       </form>
 
                 </div>

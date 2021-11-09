@@ -9,7 +9,7 @@ class StudentController extends Controller
 {
     public function index(){
         //fetching all students from the database
-        $students = Student::all(); // the all() method gets all the data from DB
+        $students = Student::orderBy('created_at','desc')->paginate(10);
         //passing the $students data to index.blade.php file
         return view('students.index',compact('students'));
     }
@@ -22,9 +22,9 @@ class StudentController extends Controller
     public function store(Request $request){
         /* field validation*/
         $this->validate($request,[
-            'name' => 'required',
-            'email' => 'required',
-            'course' => 'required'
+            'name' => 'required |string|max:255',
+            'email' => 'required|string|email|max:255',
+            'course' => 'required|max:50'
         ]);
         /* Creating instance of Student*/
        $student = new Student;
@@ -58,6 +58,13 @@ class StudentController extends Controller
 
         $student =  Student::findOrFail($id); // findOrFail method outputs 404 when unsucessful
         //feching input from the form
+        /* field validation*/
+        $this->validate($request,[
+            'name' => 'required |string|max:255',
+            'email' => 'required|string|email|max:255',
+            'course' => 'required|max:50'
+        ]);
+
         $student->name = $request->input('name');
         $student->email = $request->input('email');
         $student->course = $request->input('course');

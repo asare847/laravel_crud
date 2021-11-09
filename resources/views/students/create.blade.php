@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="card-header">
                     <h2> Add Student with Image
-                        <a href="{{ url('/students') }}" class="btn btn-success btn-sm float-right"> View Students</a>
+                        <a href="{{ url('/students') }}" class="btn btn-success btn-sm float-end"> View Students</a>
                     </h2>
                 </div>
                 <div class="card-body">
@@ -32,7 +32,7 @@
                             <label for="photo">Photo </label>
                             <input type="file" class="form-control" name="profile_image" id="profile_image" placeholder="upload image">
                         </div>
-                            <button type="submit" class="btn btn-primary btn-md" >Save Details</button>
+                            <button type="submit" class="btn btn-primary btn-md" style="margin-top: 10px">Save Details</button>
                       </form>
 
                 </div>
