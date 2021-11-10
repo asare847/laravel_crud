@@ -9,7 +9,7 @@ class StudentController extends Controller
 {
     public function index(){
         //fetching all students from the database
-        $students = Student::orderBy('created_at','desc')->paginate(10);
+        $students = Student::orderBy('created_at','desc')->latest()->paginate(10);
         //passing the $students data to index.blade.php file
         return view('students.index',compact('students'));
     }

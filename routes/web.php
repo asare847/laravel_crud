@@ -12,8 +12,8 @@ use App\Http\Controllers\StudentController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/students',[StudentController::class,'index']); 
+Route::get('/',[StudentController::class,'index']); //index route
+Route::get('/students',[StudentController::class,'index']); //
 Route::get('/students/create',[StudentController::class,'create']); 
 Route::post('/students/store',[StudentController::class,'store']); 
 Route::get('students/show/{id}',[StudentController::class,'show']);
