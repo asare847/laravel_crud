@@ -13,8 +13,8 @@ use App\Http\Controllers\StudentController;
 |
 */
 Route::get('/',[StudentController::class,'index']); //index route
-Route::get('/students',[StudentController::class,'index']); //
-Route::get('/students/create',[StudentController::class,'create']); 
+Route::get('/students',[StudentController::class,'index']); // index
+Route::get('/students/create',[StudentController::class,'create']); // create route
 Route::post('/students/store',[StudentController::class,'store']); 
 Route::get('students/show/{id}',[StudentController::class,'show']);
 Route::get('students/edit/{id}',[StudentController::class,'edit']);
