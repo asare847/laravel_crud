@@ -19,15 +19,30 @@
                         @method('PUT')
                         <div class="form-group">
                           <label for="name">Fullname</label>
-                          <input type="text" class="form-control" value="{{$student->name }}"name="name" id="name" placeholder="full name">
+                          <input type="text" class="form-control" value="{{$student->name }}"name="name" id="name" placeholder="full name" required>
+                                @error('name')
+                                <span class="alert alert-danger" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                         </div>
                         <div class="form-group">
                             <label for="email">Student Email </label>
                             <input type="email" class="form-control" name="email" value="{{$student->email }}" id="exampleFormControlInput1" placeholder="name@example.com">
+                            @error('email')
+                            <span class="alert alert-danger" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="course">Course </label>
                             <input type="text" class="form-control" name="course"  value="{{$student->course }}"id="course" placeholder="Eg.Biology">
+                            @error('email')
+                            <span class="alert alert-course" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="photo">Photo </label>
